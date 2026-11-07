@@ -1,5 +1,5 @@
 import "../../components/header";
-import { element, errorMessage, errorPage } from "../../utils/lib";
+import { element, errorMessage } from "../../utils/lib";
 import type { Book } from "../../utils/types";
 
 renderMain();
