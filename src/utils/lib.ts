@@ -32,12 +32,6 @@ export function path() {
   return window.location.pathname + window.location.search;
 }
 
-/** error 화면으로 이동 */
-export async function errorPage(response: Response) {
-  const message = `${response.status} ${response.statusText}: ${await response.text()}`;
-  window.location.href = `/h/error?message=${message}`;
-}
-
 /** error 메시지 출력 */
 export async function errorMessage(response: Response) {
   element("msg").textContent =
