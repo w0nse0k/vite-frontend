@@ -57,6 +57,9 @@ tr {
 .text-align-center {
   text-align: center;
 }
+.text-align-justify {
+  text-align: justify;
+}
 .pre-line {
   white-space: pre-line;
 }
@@ -84,8 +87,10 @@ a:link {
 .bold {
   font-weight: bold;
 }
-
 .title {
   background-color: darkgreen;
   color: white;
+}
+.warning {
+  color: orangered;
 }
