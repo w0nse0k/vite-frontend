@@ -1,7 +1,7 @@
 /** fetch wrapper: Content-Type: "application/json" */
 export function fetchJson(
   url: string,
-  method: "POST" | "PUT" | "DELETE",
+  method: "POST" | "PATCH" | "DELETE",
   data: object = {},
 ) {
   return fetch(url, {
