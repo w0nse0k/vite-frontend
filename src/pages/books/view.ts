@@ -22,7 +22,7 @@ async function renderMain() {
       <li class="title">${book.id}. <span class="bold">${book.title}</span></li>
       <li>${book.price.toLocaleString()} 원</li>
       <li><img src="${book.image}" class="w-max-100"/></li>
-      <li class="pre-line">${book.description}</li>
+      <li class="pre-line text-align-justify">${book.description}</li>
     </ul>
   `;
 }
