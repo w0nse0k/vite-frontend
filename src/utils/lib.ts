@@ -16,13 +16,19 @@ export function element<T extends HTMLElement>(id: string) {
   return document.querySelector<T>(`#${id}`)!;
 }
 
-/** formData */
-export function form(form: HTMLFormElement) {
-  return Object.fromEntries(new FormData(form));
+/** formData를 record로 */
+export function record(form: HTMLFormElement) {
+  const formData = new FormData(form);
+  return Object.fromEntries(formData);
 }
 
-/** Query params */
-export function params() {
+/** formData를 queryString으로 */
+export function queryString(form: HTMLFormElement): string {
+  return new URLSearchParams(record(form) as Record<string, string>).toString();
+}
+
+/** search params */
+export function searchParams() {
   const urlParams = new URLSearchParams(window.location.search);
   return Object.fromEntries(urlParams);
 }
@@ -36,4 +42,19 @@ export function path() {
 export async function errorMessage(response: Response) {
   element("msg").textContent =
     `${response.status} ${response.statusText}: ${await response.text()}`;
+}
+
+/** 현재 페이지 세션에 저장 */
+export function setSessionPage() {
+  sessionStorage.setItem("page", path());
+}
+
+/** 현재 페이지 세션에서 꺼내기 */
+export function getSessionPage() {
+  return sessionStorage.getItem("page");
+}
+
+/** Data 타입 예쁘게 표현 */
+export function prettyDate(date: string) {
+  return new Date(date).toLocaleString("sv-SE");
 }
