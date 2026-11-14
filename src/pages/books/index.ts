@@ -2,6 +2,7 @@ import "../../components/header";
 import { renderPageBar } from "../../components/pagebar";
 import { element, errorMessage, setSessionPage } from "../../utils/lib";
 import { type Book } from "../../utils/types";
+import escapeHtml from "escape-html";
 
 renderPageBar();
 renderMain();
@@ -16,7 +17,7 @@ async function renderMain() {
       (book: Book) => `
     <tr>
       <td>${book.id}</td>
-      <td><a href="./view?id=${book.id}">${book.title}</a></td>
+      <td><a href="./view?id=${book.id}">${escapeHtml(book.title)}</a></td>
       <td class="text-align-right">${book.price.toLocaleString()}</td>
     </tr>`,
     )

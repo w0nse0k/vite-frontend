@@ -7,6 +7,7 @@ import {
   searchParams,
 } from "../../utils/lib";
 import type { Book } from "../../utils/types";
+import escapeHtml from "escape-html";
 
 const { id } = searchParams();
 await renderMain();
@@ -19,10 +20,10 @@ async function renderMain() {
   element("content").innerHTML = `
     <p><a href="${getSessionPage()}">목록</a> <a href="./edit?id=${id}">편집</a> <button id="del">삭제</button></p>
     <ul class="info">
-      <li class="title">${book.id}. <span class="bold">${book.title}</span></li>
+      <li class="title">${book.id}. <span class="bold">${escapeHtml(book.title)}</span></li>
       <li>${book.price.toLocaleString()} 원</li>
-      <li><img src="${book.image}" class="w-max-100"/></li>
-      <li class="pre-line text-align-justify">${book.description}</li>
+      <li><img src="${escapeHtml(book.image)}" class="w-max-100"/></li>
+      <li class="pre-line text-align-justify">${escapeHtml(book.description)}</li>
     </ul>
   `;
 }
