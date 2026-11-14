@@ -31,7 +31,7 @@ async function renderMain() {
           <textarea name="description" class="w-100 h-10rem" placeholder="설명" >${book.description}</textarea>
         </li>
         <li>
-          <input type="text" name="image" class="w-100"
+          <input type="url" name="image" class="w-100"
             placeholder="이미지" value="${book.image}"/>
         </li>
         <li><button type="submit">저장</button></li>
