@@ -16,4 +16,6 @@ async function hydrateElements() {
       window.location.href = `./view?id=${result.insertId}`;
     },
   );
+
+  element("cancel").addEventListener("click", () => history.back());
 }

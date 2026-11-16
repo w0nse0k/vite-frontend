@@ -34,7 +34,7 @@ async function renderMain() {
           <input type="url" name="image" class="w-100"
             placeholder="이미지" value="${book.image}"/>
         </li>
-        <li><button type="submit">저장</button></li>
+        <li><button type="submit">저장</button> <button type="button" id="cancel">취소</button></li>
       </ul>
     </form>
   `;
@@ -51,4 +51,6 @@ async function hydrateElements() {
       window.location.href = `./view?id=${id}`;
     },
   );
+
+  element("cancel").addEventListener("click", () => history.back());
 }
