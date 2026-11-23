@@ -30,5 +30,5 @@
   <li class="title">{data.id}. <span class="bold">{data.title}</span></li>
   <li>{data.price?.toLocaleString()} 원</li>
   <li><img src={data.image} alt="" /></li>
-  <li>{data.description}</li>
+  <li class="whitespace-pre-line">{data.description}</li>
 </ul>

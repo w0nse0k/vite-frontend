@@ -28,8 +28,8 @@
     </li>
     <li>
       <textarea name="description" class="h-32" placeholder="설명"
-        >{data.description}
-        </textarea>
+        >{data.description}</textarea
+      >
     </li>
     <li>
       <input type="url" name="image" value={data.img} placeholder="이미지" />

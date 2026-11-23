@@ -16,5 +16,5 @@
 
 <main>
   {@render children()}
-  <p id="msg" class="text-orange-400">메시지</p>
+  <p id="msg" class="text-orange-400"></p>
 </main>
