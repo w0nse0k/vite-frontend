@@ -9,8 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "escape-html": "^1.0.3",
-    "node": "^26.13.1"
+    "escape-html": "^1.0.3"
   },
   "devDependencies": {
     "@types/escape-html": "^1.0.4",
@@ -19,8 +18,5 @@
     "oxlint-tsgolint": "^7.0.2008",
     "typescript": "^7.0.2",
     "vite": "^8.3.8"
-  },
-  "allowScripts": {
-    "node@26.13.1": true
   }
 }
