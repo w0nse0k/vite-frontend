@@ -7,6 +7,7 @@ import {
   searchParams,
 } from "../../utils/lib";
 import type { Book } from "../../utils/types";
+import escapeHtml from "escape-html";
 
 const { id } = searchParams();
 await renderMain();
@@ -21,14 +22,14 @@ async function renderMain() {
       <ul>
         <li>
           <input type="text" name="title" placeholder="제목" 
-            class="w-100" value="${book.title}" required autofocus />
+            class="w-100" value="${escapeHtml(book.title)}" required autofocus />
         </li>
         <li>
           <input type="number" name="price" placeholder="가격"
             class="w-100" value="${book.price}" required />
         </li>
         <li>
-          <textarea name="description" class="w-100 h-10rem" placeholder="설명" >${book.description}</textarea>
+          <textarea name="description" class="w-100 h-10rem" placeholder="설명" >${escapeHtml(book.description)}</textarea>
         </li>
         <li>
           <input type="url" name="image" class="w-100"

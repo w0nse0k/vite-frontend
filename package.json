@@ -8,17 +8,17 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "escape-html": "^1.0.3",
+    "node": "^26.13.1"
+  },
   "devDependencies": {
     "@types/escape-html": "^1.0.4",
     "@types/node": "^26.6.6",
     "oxlint": "^1.94.0",
-    "oxlint-tsgolint": "^7.0.2007",
+    "oxlint-tsgolint": "^7.0.2008",
     "typescript": "^7.0.2",
     "vite": "^8.3.8"
-  },
-  "dependencies": {
-    "escape-html": "^1.0.3",
-    "node": "^26.13.1"
   },
   "allowScripts": {
     "node@26.13.1": true
