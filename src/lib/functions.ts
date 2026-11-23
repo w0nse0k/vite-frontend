@@ -39,9 +39,13 @@ export function path() {
 }
 
 /** error 메시지 출력 */
-export async function errorMessage(response: Response) {
+export async function errorResponse(response: Response) {
   element("msg").textContent =
     `${response.status} ${response.statusText}: ${await response.text()}`;
+}
+
+export function errorMessage(message: string = "") {
+  element("msg").textContent = message;
 }
 
 /** 현재 페이지 세션에 저장 */

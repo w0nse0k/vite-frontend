@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-nanum-gothic-coding: "Nanum Gothic Coding";
+}
+
+@layer base {
+  div,
+  main,
+  p,
+  nav,
+  form {
+    @apply border-red-100;
+  }
+  body {
+    @apply bg-gray-800 font-nanum-gothic-coding text-gray-200;
+  }
+  nav {
+    @apply bg-teal-900;
+  }
+  nav a {
+    @apply px-2 py-1;
+  }
+  a {
+    @apply inline-block;
+  }
+  main {
+    @apply m-2;
+  }
+  table {
+    @apply w-full border-t;
+  }
+  thead {
+    @apply bg-teal-900;
+  }
+  tr {
+    @apply border-b;
+  }
+  p {
+    @apply py-1;
+  }
+  h1 {
+    @apply my-1 text-3xl;
+  }
+  h2 {
+    @apply my-1 text-2xl;
+  }
+  h3 {
+    @apply my-1 text-xl;
+  }
+  h4 {
+    @apply my-1 text-base;
+  }
+  h5 {
+    @apply my-1 text-sm;
+  }
+  h6 {
+    @apply my-1 text-xs;
+  }
+  ul {
+    @apply border-t;
+  }
+  li {
+    @apply border-b;
+  }
+  li.title {
+    @apply bg-teal-900;
+  }
+  input,
+  textarea {
+    @apply w-full;
+  }
+  button,
+  a.btn {
+    @apply w-20 rounded bg-teal-900 text-center outline;
+  }
+  button:hover {
+    @apply cursor-pointer
+  }
+}

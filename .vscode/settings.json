@@ -1,3 +1,5 @@
 {
-  "js/ts.tsdk.path": "node_modules/typescript"
+  "js/ts.tsdk.path": "node_modules/typescript",
+  "js/ts.experimental.useTsgo": false,
+  "css.customData": [".vscode/tailwind.css-data.json"]
 }

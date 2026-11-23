@@ -1,14 +1,23 @@
+import { svelteDevtools } from "@sveltejs/vite-devtools-svelte";
+import tailwindcss from "@tailwindcss/vite";
+import adapter from "@sveltejs/adapter-node";
+import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vite";
-import fs from "node:fs";
-
-const input = fs.globSync(["index.html", "books/*.html"]);
-console.log("input", input);
 
 export default defineConfig({
-  // Multi Page Application
-  appType: "mpa",
-
-  // /api proxy
+  plugins: [
+    svelteDevtools(),
+    tailwindcss(),
+    sveltekit({
+      compilerOptions: {
+        // Force runes mode for the project, except for libraries. Can be removed in svelte 6.
+        runes: ({ filename }) =>
+          filename.split(/[/\\]/).includes("node_modules") ? undefined : true,
+      },
+      adapter: adapter(),
+    }),
+  ],
+  devtools: { apply: "serve", clientAuth: true },
   server: {
     proxy: {
       "/api": {
@@ -17,6 +26,4 @@ export default defineConfig({
       },
     },
   },
-
-  input,
 });
