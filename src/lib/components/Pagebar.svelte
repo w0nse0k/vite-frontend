@@ -2,6 +2,7 @@
   import type { ChangeEventHandler } from "svelte/elements";
 
   let { size = "10", page = "1" } = $props();
+  
   const handleChange: ChangeEventHandler<HTMLFormElement> = (event) =>
     event.currentTarget.requestSubmit();
 </script>

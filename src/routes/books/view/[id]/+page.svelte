@@ -16,7 +16,7 @@
     if (!response.ok) {
       return await errorResponse(response);
     }
-    window.location.assign(getSessionPage() ?? "/books");
+    handleList();
   }
 </script>
 
@@ -28,7 +28,7 @@
 </p>
 <ul>
   <li class="title">{data.id}. <span class="bold">{data.title}</span></li>
-  <li>{data.price?.toLocaleString()} 원</li>
+  <li>{data.price?.toLocaleString()} 원 / {data.created_at.slice(0, 10)}</li>
   <li><img src={data.image} alt="" /></li>
   <li class="whitespace-pre-line">{data.description}</li>
 </ul>

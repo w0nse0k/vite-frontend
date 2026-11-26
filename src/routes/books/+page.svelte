@@ -2,7 +2,7 @@
   import { afterNavigate } from "$app/navigation";
   import { setSessionPage } from "#lib/functions.ts";
   import type { PageProps } from "./$types";
-  import Pagebar from "#lib/Pagebar.svelte";
+  import Pagebar from "#lib/components/Pagebar.svelte";
 
   const { data }: PageProps = $props();
   afterNavigate(() => setSessionPage());
@@ -17,6 +17,7 @@
       <th>번호</th>
       <th>제목</th>
       <th>가격</th>
+      <th>생성일</th>
     </tr>
   </thead>
   <tbody id="tbody">
@@ -25,6 +26,7 @@
         <td>{book.id}</td>
         <td><a href="/books/view/{book.id}">{book.title}</a></td>
         <td class="text-right">{book.price.toLocaleString()}</td>
+        <td class="text-right">{book.created_at.slice(0, 10)}</td>
       </tr>
     {/each}
   </tbody>

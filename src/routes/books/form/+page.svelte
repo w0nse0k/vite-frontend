@@ -1,8 +1,14 @@
 <script lang="ts">
-  import CancelButton from "#lib/CancelButton.svelte";
+  import CancelButton from "#lib/components/CancelButton.svelte";
+  import type { PageProps } from "./$types";
+
+  const { form }: PageProps = $props();
 </script>
 
 <h3>책 등록</h3>
+{#if form?.message}
+  <p class="text-orange-400">{form.message}</p>
+{/if}
 <form id="form1" method="POST">
   <ul>
     <li>
